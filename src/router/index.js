@@ -11,7 +11,7 @@ import { routes } from 'vue-router/auto-routes'
 import { userStore } from '../store/user'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory('/MVP2/'),
   routes,
 })
 

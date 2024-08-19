@@ -223,13 +223,27 @@
                 class="pr-0"
               >
                 <v-img
+                  v-if="!state.user.profilePicture"
                   width="60"
                   height="60"
+                  id="imagePreview"
                   src="../assets/avatar.svg"
+                ></v-img>
+                <v-img
+                  v-else
+                  width="60"
+                  height="60"
+                  class="rounded-circle"
+                  cover
+                  :src="state.user.profilePicture"
                 ></v-img>
               </v-col>
               <v-col class="pl-0 pb-4">
-                <v-file-input ref="fileInputRef" class="d-none"</v-file-input>
+                <v-file-input
+                  ref="fileInputRef"
+                  class="d-none"
+                  @update:model-value="readImage($event)"
+                ></v-file-input>
                 <v-btn
                   color="primary"
                   class="text-capitalize text-body-1"
@@ -243,7 +257,6 @@
                 >
               </v-col>
             </v-row>
-            {{ state.user }}
             <p class="mt-8">Alimentos que costuma doar</p>
             <v-chip-group
               multiple
@@ -374,6 +387,15 @@ function setActiveTab(tab) {
 
 function openFileInput() {
   root.$refs.fileInputRef.click()
+}
+
+function readImage(file) {
+  const fileReader = new FileReader()
+  fileReader.onload = function (e) {
+    console.log(e)
+    state.user.profilePicture = e.target.result
+  }
+  fileReader.readAsDataURL(file)
 }
 
 onMounted(() => {

@@ -18,6 +18,7 @@
             variant="outlined"
             color="primary"
             label="Email"
+            v-model="state.email"
           />
         </v-col>
         <v-col
@@ -28,6 +29,7 @@
             variant="outlined"
             color="primary"
             label="Senha"
+            v-model="state.password"
           />
         </v-col>
         <v-col
@@ -53,6 +55,7 @@
             color="primary"
             rounded="lg"
             block
+            @click="verifyUser()"
             >Login</v-btn
           >
         </v-col>
@@ -72,3 +75,27 @@
     </v-container>
   </v-layout>
 </template>
+
+<script setup>
+import { reactive } from 'vue'
+import { userStore } from '../store/user'
+import { useRouter } from 'vue-router'
+
+const state = reactive({
+  email: '',
+  password: ''
+})
+const store = userStore()
+const router = useRouter()
+
+function verifyUser() {
+  if (
+    store.user &&
+    state.email === store.user.email &&
+    state.password === store.user.password
+  ) {
+    store.user.active = true
+    router.push('/bemVindo')
+  }
+}
+</script>

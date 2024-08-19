@@ -8,6 +8,7 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router/auto'
 import { routes } from 'vue-router/auto-routes'
+import { userStore } from '../store/user'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,6 +16,19 @@ const router = createRouter({
 })
 
 // Workaround for https://github.com/vitejs/vite/issues/11804
+router.beforeEach((to, from, next) => {
+  const store = userStore()
+  if (to.path === '/login' && store.user) {
+    if (!store.user.active) {
+      return next(); // Bloqueia a navegação para /login
+    }
+    else {
+      return next(false)
+    }
+  }
+  return next()
+})
+
 router.onError((err, to) => {
   if (err?.message?.includes?.('Failed to fetch dynamically imported module')) {
     if (!localStorage.getItem('vuetify:dynamic-reload')) {

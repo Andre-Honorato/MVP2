@@ -11,7 +11,7 @@ import { routes } from 'vue-router/auto-routes'
 import { userStore } from '../store/user'
 
 const router = createRouter({
-  history: createWebHistory('/MVP2/'),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 })
 
@@ -20,7 +20,7 @@ router.beforeEach((to, from, next) => {
   const store = userStore()
   if (to.path === '/login' && store.user) {
     if (!store.user.active) {
-      return next(); // Bloqueia a navegação para /login
+      return next();
     }
     else {
       return next(false)

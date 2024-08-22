@@ -4,65 +4,11 @@
     class="bg-primary d-flex flex-column"
   >
     <v-container class="pa-6">
-      <h1>Cadastre-se</h1>
+      <h1>Editar perfil</h1>
     </v-container>
     <v-card class="h-100 rounded-t-xl">
       <v-container class="pa-6">
         <v-tabs-window v-model="state.tab">
-          <v-tabs-window-item value="one">
-            <h2 class="text-low pt-6">Qual seu perfil?</h2>
-            <v-row class="mt-6">
-              <v-col cols="12">
-                <v-card
-                  variant="flat"
-                  border
-                  @click="setActiveTab('two', 'ong')"
-                >
-                  <v-row
-                    class="pa-6 h-100"
-                    align="center"
-                  >
-                    <v-col cols="4">
-                      <v-img
-                        width="64"
-                        height="64"
-                        src="../assets/ong.svg"
-                      ></v-img>
-                    </v-col>
-                    <v-col>
-                      <h3>ONG</h3>
-                      <p class="mt-1">
-                        Disposto a coletar e distribuir alimentos
-                      </p>
-                    </v-col>
-                  </v-row>
-                </v-card>
-                <v-card
-                  class="mt-9"
-                  variant="flat"
-                  border
-                  @click="setActiveTab('two', 'estabelecimento')"
-                >
-                  <v-row
-                    class="pa-6 h-100"
-                    align="center"
-                  >
-                    <v-col cols="4">
-                      <v-img
-                        width="64"
-                        height="64"
-                        src="../assets/estabelecimento.svg"
-                      ></v-img>
-                    </v-col>
-                    <v-col>
-                      <h3>Estabelecimento</h3>
-                      <p class="mt-1">Disposto a doar alimentos</p>
-                    </v-col>
-                  </v-row>
-                </v-card>
-              </v-col>
-            </v-row>
-          </v-tabs-window-item>
           <v-tabs-window-item value="two">
             <v-img
               class="mx-auto"
@@ -71,8 +17,8 @@
             ></v-img>
             <p class="text-primary text-h6 mt-6">Dados pessoais</p>
             <v-form
-              @submit.prevent
               ref="formOne"
+              @submit.prevent
             >
               <v-row class="mt-3">
                 <v-col
@@ -81,38 +27,11 @@
                 >
                   <v-text-field
                     rounded="lg"
-                    label="Email"
-                    variant="outlined"
-                    color="primary"
-                    v-model="state.user.email"
-                    :rules="state.ruleRequerido"
-                  ></v-text-field>
-                </v-col>
-                <v-col
-                  cols="12"
-                  class="pt-0 pb-1"
-                >
-                  <v-text-field
-                    rounded="lg"
                     label="Nome"
                     variant="outlined"
                     color="primary"
-                    :rules="state.ruleRequerido"
                     v-model="state.user.name"
-                  ></v-text-field>
-                </v-col>
-                <v-col
-                  cols="12"
-                  class="pt-0 pb-1"
-                >
-                  <v-text-field
-                    rounded="lg"
-                    label="CNPJ"
-                    variant="outlined"
-                    color="primary"
-                    v-maska="'##.###.###/####-##'"
-                    :rules="state.ruleCnpj"
-                    v-model="state.user.cpfCnpj"
+                    :rules="state.ruleRequerido"
                   ></v-text-field>
                 </v-col>
                 <v-col
@@ -123,8 +42,8 @@
                     rounded="lg"
                     label="CEP"
                     variant="outlined"
-                    @blur="searchCEP()"
                     color="primary"
+                    @blur="searchCEP()"
                     v-maska="'#####-###'"
                     :rules="state.ruleCep"
                     v-model="state.user.cep"
@@ -137,9 +56,9 @@
                   <v-text-field
                     rounded="lg"
                     label="Endereço"
+                    :rules="state.ruleRequerido"
                     variant="outlined"
                     color="primary"
-                    :rules="state.ruleRequerido"
                     v-model="state.user.address"
                   ></v-text-field>
                 </v-col>
@@ -150,9 +69,9 @@
                   <v-text-field
                     rounded="lg"
                     label="Número"
+                    :rules="state.ruleRequerido"
                     variant="outlined"
                     color="primary"
-                    :rules="state.ruleRequerido"
                     v-model="state.user.number"
                   ></v-text-field>
                 </v-col>
@@ -176,10 +95,10 @@
                   <v-autocomplete
                     rounded="lg"
                     label="UF"
-                    variant="outlined"
                     :items="ufs"
-                    color="primary"
+                    variant="outlined"
                     :rules="state.ruleRequerido"
+                    color="primary"
                     v-model="state.user.uf"
                   ></v-autocomplete>
                 </v-col>
@@ -192,24 +111,10 @@
                     label="Celular"
                     type="tel"
                     variant="outlined"
-                    color="primary"
                     v-maska="'(##) #####-####'"
                     :rules="state.ruleCelular"
-                    v-model="state.user.phone"
-                  ></v-text-field>
-                </v-col>
-                <v-col
-                  cols="12"
-                  class="pt-0 pb-1"
-                >
-                  <v-text-field
-                    rounded="lg"
-                    label="Senha"
-                    variant="outlined"
                     color="primary"
-                    type="password"
-                    :rules="state.ruleSenha"
-                    v-model="state.user.password"
+                    v-model="state.user.phone"
                   ></v-text-field>
                 </v-col>
                 <v-col
@@ -225,7 +130,6 @@
                   ></v-text-field>
                 </v-col>
               </v-row>
-
               <v-btn
                 block
                 color="primary"
@@ -323,15 +227,15 @@
                 filter
                 size="large"
                 class="text-body-1"
-                value="massas"
-                >Laticínios</v-chip
+                value="salgados"
+                >Salgados</v-chip
               >
               <v-chip
                 filter
                 size="large"
                 class="text-body-1"
-                value="massas"
-                >Condimentos</v-chip
+                value="temperos"
+                >Temperos</v-chip
               >
               <v-chip
                 filter
@@ -381,7 +285,6 @@
                 label="Descrição"
                 rounded="lg"
                 color="primary"
-                :rules="state.ruleRequerido"
                 class="mt-6"
                 v-model="state.user.description"
               />
@@ -431,7 +334,7 @@ import { userStore } from '../store/user'
 import { vMaska } from 'maska/vue'
 
 const state = reactive({
-  tab: 'one',
+  tab: 'two',
   user: {
     email: '',
     password: '',
@@ -442,10 +345,7 @@ const state = reactive({
     phone: '',
     number: '',
     city: '',
-    uf: null,
-    type: '',
-    start: '',
-    end: '',
+    uf: '',
     complement: '',
     profilePicture: '',
     categories: [],
@@ -555,28 +455,17 @@ const ufs = [
   'TO'
 ]
 
-async function validate(refForm, next) {
-  const valid = (await root.$refs[refForm].validate()).valid
-  if (valid) {
-    if (state.tab !== 'three') {
-      if (next === 'save') {
-        saveUser()
-      } else {
-        setActiveTab(next)
-      }
-    } else {
-      if (!state.user.profilePicture) {
-        state.snackbarText = 'Carregue uma imagem de perfil'
-        state.snackbar = true
-      }
-      else if (!state.user.categories.length) {
-        state.snackbarText = `Escolha o que deseja ${state.user.type === 'ong' ? 'receber' : 'doar'}`
-        state.snackbar = true
-      }
-      else {
-        saveUser()
-      }
-    }
+function handlePopState() {
+  switch (state.tab) {
+    case 'three':
+      state.tab = 'two'
+      break
+    case 'two':
+      state.tab = 'one'
+      break
+    case 'one':
+      router.push('/login')
+      break
   }
 }
 
@@ -594,29 +483,37 @@ async function searchCEP() {
   }
 }
 
-function handlePopState() {
-  switch (state.tab) {
-    case 'three':
-      state.tab = 'two'
-      break
-    case 'two':
-      state.tab = 'one'
-      break
-    case 'one':
-      router.push('/login')
-      break
+async function validate(refForm, next) {
+  const valid = (await root.$refs[refForm].validate()).valid
+  if (valid) {
+    if (state.tab !== 'three') {
+      if (next === 'save') {
+        saveUser()
+      } else {
+        setActiveTab(next)
+      }
+    } else {
+      if (!state.user.profilePicture) {
+        state.snackbarText = 'Carregue uma imagem de perfil'
+        state.snackbar = true
+      } else if (!state.user.categories.length) {
+        state.snackbarText = `Escolha o que deseja ${
+          state.user.type === 'ong' ? 'receber' : 'doar'
+        }`
+        state.snackbar = true
+      } else {
+        saveUser()
+      }
+    }
   }
 }
 
 function saveUser() {
   store.user = Object.assign({}, state.user)
-  router.push('/successCreate')
+  router.push('/successEdit')
 }
 
-function setActiveTab(tab, type) {
-  if (type) {
-    state.user.type = type
-  }
+function setActiveTab(tab) {
   state.tab = tab
   window.history.pushState({ tab }, '')
 }
@@ -635,6 +532,7 @@ function readImage(file) {
 
 onMounted(() => {
   window.addEventListener('popstate', handlePopState)
+  state.user = Object.assign({}, store.user)
 })
 onBeforeUnmount(() => {
   window.removeEventListener('popstate', handlePopState)

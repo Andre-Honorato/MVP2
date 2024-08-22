@@ -5,6 +5,7 @@
         <router-view />
       </v-slide-x-transition>
     </v-main>
+    
   </v-app>
 </template>
 

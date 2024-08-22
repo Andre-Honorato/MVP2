@@ -26,6 +26,17 @@ router.beforeEach((to, from, next) => {
       return next(false)
     }
   }
+  if (to.path === '/bemVindo' && store.user) {
+    if (store.user.finishedTutorial) {
+      return next(false)
+    }
+    else {
+      return next()
+    }
+  }
+  if (to.path ==='/home' && !store.user) {
+    return next('/login')
+  }
   return next()
 })
 

@@ -68,6 +68,7 @@
             variant="text"
             color="primary"
             to="/cadastro"
+            block
             >Cadastre-se</v-btn
           >
         </v-col>

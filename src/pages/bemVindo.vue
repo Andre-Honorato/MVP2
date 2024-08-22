@@ -25,8 +25,22 @@
         class="text-primary text-capitalize text-body-1 mt-6 px-10"
         size="large"
         to="/home"
+        @click="finishTutorial()"
         >Próximo</v-btn
       >
     </v-container>
   </v-layout>
 </template>
+
+<script setup>
+import { userStore } from '../store/user'
+import { useRouter } from 'vue-router'
+
+const store = userStore()
+const router = useRouter()
+
+function finishTutorial() {
+  store.user.finishedTutorial = true
+  router.push('/home')
+}
+</script>

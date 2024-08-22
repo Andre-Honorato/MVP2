@@ -22,7 +22,7 @@
     </div>
     <v-container class="pa-6">
       <h1>Descrição</h1>
-      <p class="text-low text-body-1 mt-2">{{ store.user.description }}</p>
+      <p class="text-low text-body-1 mt-2" style="word-wrap: break-word;">{{ store.user.description }}</p>
     </v-container>
   </v-layout>
   <v-bottom-navigation

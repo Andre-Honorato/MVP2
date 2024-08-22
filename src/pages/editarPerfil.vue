@@ -202,7 +202,7 @@
               color="primary"
               v-model="state.user.categories"
             >
-              <v-chip
+            <v-chip
                 filter
                 size="large"
                 class="text-body-1"
@@ -227,15 +227,15 @@
                 filter
                 size="large"
                 class="text-body-1"
-                value="salgados"
-                >Salgados</v-chip
+                value="laticinios"
+                >Laticínios</v-chip
               >
               <v-chip
                 filter
                 size="large"
                 class="text-body-1"
-                value="temperos"
-                >Temperos</v-chip
+                value="condimentos"
+                >Condimentos</v-chip
               >
               <v-chip
                 filter

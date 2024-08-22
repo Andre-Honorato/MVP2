@@ -323,14 +323,14 @@
                 filter
                 size="large"
                 class="text-body-1"
-                value="massas"
+                value="laticinios"
                 >Laticínios</v-chip
               >
               <v-chip
                 filter
                 size="large"
                 class="text-body-1"
-                value="massas"
+                value="condimentos"
                 >Condimentos</v-chip
               >
               <v-chip

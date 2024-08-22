@@ -29,6 +29,7 @@
             variant="outlined"
             color="primary"
             label="Senha"
+            type="password"
             v-model="state.password"
           />
         </v-col>

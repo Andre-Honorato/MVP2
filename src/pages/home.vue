@@ -176,9 +176,9 @@ function see(product) {
 const filteredItems = computed(() => {
   if (filter.value) {
     if (storeUser.user.type === 'ong') {
-      return storeProducts.products.markets.filter(obj => obj.name.toLowerCase().includes(filter.value))
+      return storeProducts.products.markets.filter(obj => obj.name.toLowerCase().includes(filter.value.toLowerCase()))
     }
-    return storeProducts.products.ongs.filter(obj => obj.name.toLowerCase().includes(filter.value))
+    return storeProducts.products.ongs.filter(obj => obj.name.toLowerCase().includes(filter.value.toLowerCase()))
   }
   else {
     if (storeUser.user.type === 'ong') {

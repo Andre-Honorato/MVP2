@@ -4,7 +4,7 @@
     <p class="text-low mt-3 mb-6">Enviaremos um e-mail com instruções de como redefinir sua senha</p>
     <v-row>
       <v-col cols="12">
-        <v-text-field v-model="email" variant="outlined" label="Email" />
+        <v-text-field color="primary" v-model="email" variant="outlined" label="Email" />
       </v-col>
       <v-col class="pt-2">
         <v-btn

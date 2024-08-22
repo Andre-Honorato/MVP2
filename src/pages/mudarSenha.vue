@@ -10,6 +10,7 @@
         <v-col cols="12">
           <v-text-field
             type="password"
+            color="primary"
             v-model="senha"
             variant="outlined"
             label="Nova senha"

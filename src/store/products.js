@@ -10,7 +10,7 @@ export const productsStore = defineStore('products', () => {
         collected: false,
         name: 'Amigão supermercado',
         address: 'R. Saudades, 1004',
-        image: '/src/assets/markets/amigao.png',
+        image: '../assets/markets/amigao.png',
         description: 'Amigão supermercado é um supermercado localizado no endereço R. Saudades, 1004',
         categories: ['Carnes', 'Doces', 'Massas'],
         start: '08:00',

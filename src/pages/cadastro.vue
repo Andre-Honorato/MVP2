@@ -251,8 +251,8 @@
               align="center"
             >
               <v-col
-                cols="3"
-                class="pr-0"
+                cols="auto"
+                class=""
               >
                 <v-img
                   v-if="!state.user.profilePicture"
@@ -270,7 +270,7 @@
                   :src="state.user.profilePicture"
                 ></v-img>
               </v-col>
-              <v-col class="pl-0 pb-4">
+              <v-col class="pl-2 pb-4">
                 <v-file-input
                   ref="fileInputRef"
                   class="d-none"

@@ -23,6 +23,26 @@
     <v-container class="pa-6">
       <h1>Descrição</h1>
       <p class="text-low text-body-1 mt-2" style="word-wrap: break-word;">{{ store.user.description }}</p>
+      <h3 class="mt-4">
+        Frequentemente 
+        {{ store.user.type === 'ong' ? 'doados' : 'recebidos' }}
+      </h3>
+      <v-chip-group
+        multiple
+        class="mt-3"
+        color="primary"
+        :model-value="store.user.categories"
+      >
+        <v-chip
+          filter
+          style="pointer-events: none;"
+          v-for="category in store.user.categories"
+          size="large"
+          class="text-body-1 text-capitalize"
+          :value="category"
+          >{{ category }}</v-chip
+        >
+      </v-chip-group>
     </v-container>
   </v-layout>
   <v-bottom-navigation

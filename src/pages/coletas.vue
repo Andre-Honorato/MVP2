@@ -5,7 +5,7 @@
       <h3 class="text-low">Nenhuma {{ storeUser.user.type === 'ong' ? 'coleta' : 'doação' }} feita</h3>
     </v-container>
     <v-container v-else class="pa-6">
-      <h3>Minhas coletas</h3>
+      <h3>Minhas {{ storeUser.user.type === 'ong' ? 'coletas' : 'doações' }}</h3>
       <v-row
         v-for="product in favorites"
         :key="product.id"

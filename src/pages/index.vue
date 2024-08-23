@@ -3,7 +3,7 @@
     full-height
     class="bg-primary"
   >
-    <v-container class="pa-6 d-flex flex-column">
+    <v-container class="pa-6 d-flex justify-center align-center flex-column">
       <h1 class="text-white">Integrantes do grupo</h1>
       <div class="d-flex flex-column mt-3">
         <span class="text-white mt-2">Alexia Eduarda</span>

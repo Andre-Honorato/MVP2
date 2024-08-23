@@ -6,10 +6,10 @@
     <v-container class="pa-6 d-flex flex-column">
       <h1 class="text-white">Integrantes do grupo</h1>
       <div class="d-flex flex-column mt-3">
-        <span class="text-white mt-2">Alexia</span>
-        <span class="text-white mt-2">André</span>
-        <span class="text-white mt-2">Maria</span>
-        <span class="text-white mt-2">Mariana</span>
+        <span class="text-white mt-2">Alexia Eduarda</span>
+        <span class="text-white mt-2">André Honorato</span>
+        <span class="text-white mt-2">Maria Vasconcelos</span>
+        <span class="text-white mt-2">Mariana Rosalita</span>
       </div>
       <v-btn
         variant="flat"

@@ -42,6 +42,7 @@
             variant="text"
             color="primary"
             to="/esqueceuSenha"
+            style="text-transform: none;"
             >Esqueci minha senha</v-btn
           >
         </v-col>
@@ -70,6 +71,7 @@
             color="primary"
             to="/cadastro"
             block
+            style="text-transform: none;"
             >Cadastre-se</v-btn
           >
         </v-col>
